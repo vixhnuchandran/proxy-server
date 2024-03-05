@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get("/", async (req, res) => {
+  res.sendStatus(200);
+});
+
 app.get("/fetch", async (req, res) => {
   try {
     const url = req.query.url;
