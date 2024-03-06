@@ -5,6 +5,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+// Enable CORS for all routes
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 app.get("/", async (req, res) => {
   res.sendStatus(200);
 });
